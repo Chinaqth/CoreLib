@@ -2,6 +2,7 @@ package com.corelib.utils
 
 import android.graphics.Color
 import android.os.Build
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import com.corelib.activity.CoreActivity
@@ -78,7 +79,8 @@ object WindowUtil {
         activity.window.let {
             it.statusBarColor = Color.TRANSPARENT
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                activity.window.decorView.windowInsetsController?.setSystemBarsAppearance(APPEARANCE_LIGHT_STATUS_BARS, APPEARANCE_LIGHT_STATUS_BARS)
+                it.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                it.decorView.windowInsetsController?.setSystemBarsAppearance(APPEARANCE_LIGHT_STATUS_BARS, APPEARANCE_LIGHT_STATUS_BARS)
             }
         }
     }
