@@ -49,21 +49,21 @@ abstract class CoreFragment : Fragment() {
     /**
      * 初始化View
      */
-    fun initContentView() {
+    open fun initContentView() {
 
     }
 
     /**
      * 添加View的各种事件
      */
-    fun initViewAction() {
+    open fun initViewAction() {
 
     }
 
     /**
      * 在onDestroy中手动回收/释放资源
      */
-    fun onRelease() {
+    open fun onRelease() {
 
     }
 
