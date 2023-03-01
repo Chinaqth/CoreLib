@@ -2,6 +2,7 @@ package com.corelib.imageloader
 
 import android.graphics.Bitmap
 import android.widget.ImageView
+import androidx.annotation.AnimRes
 import androidx.annotation.DrawableRes
 
 interface ImageLoader {
@@ -12,7 +13,11 @@ interface ImageLoader {
      * @param callBack loading image stats
      */
     fun loadLocalImage(
-        imageView: ImageView?, @DrawableRes resId: Int, radius: Int, callBack: ImageLoadCallBack?
+        imageView: ImageView?,
+        @DrawableRes resId: Int,
+        radius: Int,
+        @AnimRes animId: Int,
+        callBack: ImageLoadCallBack?
     )
 
     /**
@@ -26,7 +31,8 @@ interface ImageLoader {
         imageView: ImageView?,
         url: String,
         radius: Int,
-        @DrawableRes placeholder: Int,
+        @DrawableRes placeholder: Int = 0,
+        @AnimRes animId: Int = 0,
         callBack: ImageLoadCallBack?
     )
 
